@@ -30,3 +30,21 @@ rules:
   - events
   verbs:
   - create
+# required for leader election
+# see https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/issues/1635
+# and https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/pull/1647
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - create
