@@ -1,0 +1,4 @@
+FROM gcr.io/cdapio/cdap-controller@sha256:7c171c6ff7f7aa7384394c43585f552d3818b8d3355d633ff797be6c4185c371
+
+# Fixes error "container has runAsNonRoot and image will run as root"
+USER 999
